@@ -1,3 +1,4 @@
+import re
 import os.path
 from six.moves.urllib.parse import (
     ParseResult, urlunparse, urldefrag,
@@ -25,7 +26,9 @@ def canonicalize_path(path):
         if path == prev_path:
             break
         prev_path = path
+
     path = os.path.normpath(path)
+    path = re.sub('/+', '/', path)
     path = quote(path)
     return path
 
