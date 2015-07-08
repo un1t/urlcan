@@ -1,3 +1,4 @@
+import os.path
 from six.moves.urllib.parse import (
     ParseResult, urlunparse, urldefrag,
     urlparse, parse_qsl, urlencode,
@@ -8,7 +9,11 @@ from six.moves.urllib.parse import (
 
 def canonicalize(url):
     scheme, netloc, path, params, query, fragment = urlparse(url)
+
+    scheme, netloc, path, params, query, fragment = urlparse(url)
+    netloc = netloc.strip('.')
     path = canonicalize_path(path)
+
     fragment = ''
     return urlunparse((scheme, netloc.lower(), path, params, query, fragment))
 
@@ -20,4 +25,7 @@ def canonicalize_path(path):
         if path == prev_path:
             break
         prev_path = path
-    return quote(path)
+    path = os.path.normpath(path)
+    path = quote(path)
+    return path
+

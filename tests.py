@@ -98,3 +98,6 @@ def test_32():
 
 def test_33():
     assert canonicalize("http://host.com//twoslashes?more//slashes") == "http://host.com/twoslashes?more//slashes"
+
+def test_34():
+    assert canonicalize("http://host.com/aa/../../../dots") == "http://host.com/dots"
