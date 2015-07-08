@@ -4,4 +4,5 @@ __pycache__
 MANIFEST
 python3
 urlcan.egg-info/
+dist/
 
