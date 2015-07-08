@@ -1,5 +1,5 @@
 URL canonicalization library.
-Parses URL and made it valid according to RFC 2396.
+Parses URL and makes it valid according to RFC 2396.
 
 Features
 ========
