@@ -2,7 +2,7 @@ from distutils.core import setup
 
 version = '0.0.1'
 
-setup(name='urlnorm',
+setup(name='urlcan',
     version=version,
     description="",
     py_modules=['urlcan'],

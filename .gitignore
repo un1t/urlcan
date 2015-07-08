@@ -3,3 +3,5 @@ __pycache__
 .tox
 MANIFEST
 python3
+urlcan.egg-info/
+
