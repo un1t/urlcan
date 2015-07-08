@@ -1,10 +1,6 @@
 import re
 import os.path
-from six.moves.urllib.parse import (
-    ParseResult, urlunparse, urldefrag,
-    urlparse, parse_qsl, urlencode,
-    quote, unquote
-)
+from six.moves.urllib.parse import urlparse, urlunparse, quote, unquote
 
 # https://developers.google.com/safe-browsing/developers_guide_v2#Canonicalization
 
@@ -15,7 +11,6 @@ def canonicalize(url):
 
     fragment = ''
     return urlunparse((scheme, netloc, path, params, query, fragment))
-
 
 def canonicalize_path(path):
     if path == '':
